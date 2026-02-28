@@ -1,7 +1,6 @@
 package analyzer
 
 import (
-	"fmt"
 	"go/ast"
 	"go/token"
 	"go/types"
@@ -10,15 +9,15 @@ import (
 	"golang.org/x/tools/go/analysis"
 )
 
-var Analizer = &analysis.Analyzer{
+var Analyzer = &analysis.Analyzer{
 	Name: "linter",
 	Doc:  "this analyzer reports linting errors",
 	Run:  run,
 }
 
 func run(pass *analysis.Pass) (interface{}, error) {
-	for _, f := range pass.Files {
-		ast.Inspect(f, func(n ast.Node) bool {
+	for _, file := range pass.Files {
+		ast.Inspect(file, func(n ast.Node) bool {
 			call, ok := n.(*ast.CallExpr)
 			if !ok {
 				return true
@@ -45,7 +44,6 @@ func run(pass *analysis.Pass) (interface{}, error) {
 			msg, _ := strconv.Unquote(lit.Value)
 
 			checkRules(pass, lit, msg)
-			//fmt.Printf("pass: %v, lit: %v, msg: %s\n", pass, lit, msg)
 
 			return true
 		})
