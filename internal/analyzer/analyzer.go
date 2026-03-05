@@ -8,7 +8,7 @@ import (
 
 	"golang.org/x/tools/go/analysis"
 
-	"linter/internal/analyzer/rules"
+	"github.com/ladev74/linter/internal/analyzer/rules"
 )
 
 const (

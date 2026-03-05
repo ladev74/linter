@@ -5,7 +5,7 @@ import (
 
 	"github.com/ilyakaznacheev/cleanenv"
 
-	"linter/internal/analyzer"
+	"github.com/ladev74/linter/internal/analyzer"
 )
 
 type Config struct {

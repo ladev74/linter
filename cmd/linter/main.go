@@ -7,8 +7,8 @@ import (
 	"github.com/go-uber/zap"
 	"golang.org/x/tools/go/analysis/singlechecker"
 
-	"linter/internal/analyzer"
-	"linter/internal/config"
+	"github.com/ladev74/linter/internal/analyzer"
+	"github.com/ladev74/linter/internal/config"
 )
 
 // TODO: в README написать почему не вынес в конфиг поддерживаемые логгеры (в тз жестко прописаны какие логгеры нужно поддерживать)
