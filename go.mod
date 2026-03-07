@@ -1,6 +1,6 @@
 module github.com/ladev74/linter
 
-go 1.25.7
+go 1.26.1
 
 require (
 	github.com/go-uber/zap v1.0.0

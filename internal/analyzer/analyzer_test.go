@@ -5,7 +5,7 @@ import (
 
 	"golang.org/x/tools/go/analysis/analysistest"
 
-	"linter/internal/analyzer/rules"
+	"github.com/ladev74/linter/internal/analyzer/rules"
 )
 
 func TestIsSupportedLoggerPath(t *testing.T) {

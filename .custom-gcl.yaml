@@ -1,8 +1,6 @@
 version: v2.10.1
-plugins:
-  - module: 'github.com/ladev74/linter'
-    import: 'github.com/ladev74/linter/internal/analyzer'
-    version: v1.0.0
 
-  - module: 'github.com/ladev74/linter'
-    path: ./internal/analyzer
+plugins:
+  - module: github.com/ladev74/linter
+    import: github.com/ladev74/linter/plugin
+    path: .

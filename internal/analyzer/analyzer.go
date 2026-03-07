@@ -17,27 +17,28 @@ const (
 )
 
 type Config struct {
-	Rules rules.Config `yaml:"rules"`
+	ConfigPath string       `yaml:"config_path" json:"config_path"`
+	Rules      rules.Config `yaml:"rules" json:"rules"`
 }
 
 const (
-	analyzerName = "linter"
-	analyzerDoc  = "this analyzer reports linting errors"
+	Name = "logcheck"
+	doc  = "this analyzer reports linting errors"
 )
 
 func New(cfg *Config) *analysis.Analyzer {
 	analyzer := &analysis.Analyzer{
-		Name: analyzerName,
-		Doc:  analyzerDoc,
+		Name: Name,
+		Doc:  doc,
 		Run: func(pass *analysis.Pass) (any, error) {
-			return run(pass, cfg)
+			return Run(pass, cfg)
 		},
 	}
 
 	return analyzer
 }
 
-func run(pass *analysis.Pass, cfg *Config) (interface{}, error) {
+func Run(pass *analysis.Pass, cfg *Config) (interface{}, error) {
 	for _, file := range pass.Files {
 		ast.Inspect(file, func(n ast.Node) bool {
 			call, ok := n.(*ast.CallExpr)

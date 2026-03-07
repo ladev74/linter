@@ -1,0 +1,26 @@
+version: "2"
+
+linters:
+  enable:
+    - logcheck
+  settings:
+    custom:
+      logcheck:
+        type: "module"
+        description: "my log message checker"
+        settings:
+          config_path: ./config/example.yaml
+#          rules:
+#            lowercase_start:
+#              enabled: true
+#            english_only:
+#              enabled: true
+#            disallow_special_characters:
+#              enabled: true
+#            disallow_sensitive_data:
+#              enabled: true
+#              patterns:
+#                - password
+#                - pass
+#                - token
+#                - api_key
