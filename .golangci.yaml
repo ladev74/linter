@@ -1,0 +1,26 @@
+version: "2"
+
+linters:
+  default: none
+  enable:
+    - logcheck
+  settings:
+    custom:
+      logcheck:
+        type: "module"
+        description: My log message checker
+        settings:
+          rules:
+            lowercase_start:
+              enabled: true
+            english_only:
+              enabled: true
+            disallow_special_characters:
+              enabled: true
+            disallow_sensitive_data:
+              enabled: true
+              patterns:
+                - password
+                - pass
+                - token
+                - api_key
